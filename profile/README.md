@@ -8,7 +8,7 @@ Using Vertex Colors can be a fast and painless way to starting with a graphics A
 
 ![Image of a Pink BMW E34 in a Cyberpunk setting](https://camo.githubusercontent.com/6b0807eced228ca80a35a1427aae346c66eb2c0dce203671df39322b5d152612/68747470733a2f2f64617368626f6172642e736e617063726166742e696f2f736974655f6d656469612f6170706d656469612f323032332f31312f53637265656e73686f745f323032332d31312d30315f32312d35372d32372e706e67)
 
-In the image Below the Token Coins and Figurines posed as Prizes in the Coin Pusher are Machine Learning generated 3D models by LUMA.AI/GENIE that have had their UV Texture maps projected to Vertex Colors in Blender using the [Cycles rendering engine](https://docs.blender.org/manual/en/latest/render/cycles/introduction.html).
+In the image Below the Ttken coins and figurines posed as prizes in the coin pusher are Machine Learning (ML) generated 3D models by [LUMA.AI/GENIE](https://LUMA.AI/GENIE) that have had their UV Texture maps projected to Vertex Colors in Blender using the [Cycles rendering engine](https://docs.blender.org/manual/en/latest/render/cycles/introduction.html).
 
 ![TuxPusher game screenshot displaying Texture to Vertex Color projection objects](https://dashboard.snapcraft.io/site_media/appmedia/2024/01/Screenshot_2024-01-11_05-37-55.png)
 
