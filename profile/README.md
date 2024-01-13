@@ -20,4 +20,5 @@ The [PLY Format](https://paulbourke.net/dataformats/ply/) already closely repres
 ## Loading PLY files in C
 [The RPLY Project](https://w3.impa.br/~diego/software/rply/) has simple examples, is fast and light-weight to implement into projects.
 
-
+## Compiling PLY files into C as memory buffers
+...
