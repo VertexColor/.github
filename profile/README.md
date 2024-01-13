@@ -10,6 +10,8 @@ Using Vertex Colors can be a fast and painless way to starting with a graphics A
 
 In the image Below the Token Coins and Figurines posed as Prizes in the Coin Pusher are Machine Learning generated 3D models by LUMA.AI/GENIE that have had their UV Texture maps projected to Vertex Colors in Blender using the [Cycles rendering engine](https://docs.blender.org/manual/en/latest/render/cycles/introduction.html).
 
+![TuxPusher game screenshot displaying Texture to Vertex Color projection objects](https://dashboard.snapcraft.io/site_media/appmedia/2024/01/Screenshot_2024-01-11_05-37-55.png)
+
 ## Reading and Writing PLY Files
 PLY Files are pretty easy to write a custom reader for, in ASCII or BINARY format, so I encourage you to hack together something to convert these buffers into buffers on the GPU. Most software such as [MeshLab](https://www.meshlab.net/) or [Blender](https://www.blender.org/) can export to PLY so really your main concern is reading usually.
 
