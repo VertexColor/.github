@@ -4,7 +4,7 @@ Using Vertex Colors can be a fast and painless way to starting with a graphics A
 ## Three main uses of Vertex Colors
 * Subdivide mesh and then project a pre-existing UV Texture as Vertex Colors
 * Split mesh into seperate parts that represent it's primary colors.
-* Blending between two colors on a face can be used to advantage, in the image below the cube pillars all use the automatic color interpolation between vertices to it's advantage to create an intended colour blend pink to purple.
+* Blending between two colors on a face can be used to advantage, in the image below the cube pillars all use the automatic color interpolation between vertices to it's advantage to create an intended colour blend, pink to purple.
 
 ![Image of a Pink BMW E34 in a Cyberpunk setting](https://camo.githubusercontent.com/6b0807eced228ca80a35a1427aae346c66eb2c0dce203671df39322b5d152612/68747470733a2f2f64617368626f6172642e736e617063726166742e696f2f736974655f6d656469612f6170706d656469612f323032332f31312f53637265656e73686f745f323032332d31312d30315f32312d35372d32372e706e67)
 
