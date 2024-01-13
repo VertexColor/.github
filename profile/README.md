@@ -12,7 +12,7 @@ The [PLY Format](https://paulbourke.net/dataformats/ply/) already closely repres
 * **To quickly load model data**, the PLY format already supplies the data in Binary format as interleaved rows making it a simple memory copy and access with the right stride and offset in OpenGL, but I do reccomend parsing out each vertex array, position, normal, color, into their own respective arrays if you intend to be doing anything with them.
 * **The index buffer** in PLY files is preceded by the amount of vertex used to define a face, usually I work in triangles so that's always 3 for me, but I still need to parse a new index buffer without the preceding face counts for each proceding three vertices that make a triangle face, as OpenGL is generally used with the  [GL_TRIANGLES](https://registry.khronos.org/OpenGL-Refpages/es2.0/) draw mode that expects the supplied index buffer is to be of triangle faces only.
 
-# Loading PLY files in C
+## Loading PLY files in C
 [The RPLY Project](https://w3.impa.br/~diego/software/rply/) has simple examples, is fast and light-weight to implement into projects.
 
 ![Image of a Pink BMW E34 in a Cyberpunk setting](https://camo.githubusercontent.com/6b0807eced228ca80a35a1427aae346c66eb2c0dce203671df39322b5d152612/68747470733a2f2f64617368626f6172642e736e617063726166742e696f2f736974655f6d656469612f6170706d656469612f323032332f31312f53637265656e73686f745f323032332d31312d30315f32312d35372d32372e706e67)
