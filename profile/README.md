@@ -16,7 +16,9 @@ In the image below the token coins and figurines posed as prizes in the coin pus
 
 It tends to look great after a particular distance, and gets worse than a texture close up, and this form of Vertex Color use is expensive on triangle useage ofc, there is the adage that a good texture is all you need, the amount of polygons is more of a luxuary, that is a true statement that casts more of a gluttonous bias upon the expense of textural detail when working with Vertex Colors.
 
-But vertex colors are a bigger saving in the long run, even in this worst-case use scenario because you don't need to keep high resolution textures around, you basically settle on some vertex density that you are happy with and vertex project it, adding a color to each vertex only needs to be an additional 3 bytes for r,g,b.
+But vertex colors are a bigger saving in the long run, because you don't need to keep high resolution textures around, you basically settle on some vertex density that you are happy with and vertex project it, adding a color to each vertex only needs to be an additional 3 bytes for r,g,b.
+
+or you could keep is simple like in the car game above, artistic use of vertex colors on low poly models, which is also a great benefit to textures, I personally really like the art style to it and it can be done realtively cheaply, particularly if you only had one color per part rendered, that could mean no color buffer at all just update the shader [glUniform3f()](https://registry.khronos.org/OpenGL-Refpages/es2.0/) and do [Painter's-algorithm](https://en.wikipedia.org/wiki/Painter%27s_algorithm) style updates.
 
 ![TuxPusher game screenshot displaying Texture to Vertex Color projection objects](https://dashboard.snapcraft.io/site_media/appmedia/2024/01/Screenshot_2024-01-11_05-37-55.png)
 
