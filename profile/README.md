@@ -16,7 +16,7 @@ In the image below the token coins and figurines posed as prizes in the coin pus
 
 It tends to look great after a particular distance, and gets worse than a texture close up, and this form of Vertex Color use is expensive on triangle useage ofc, there is the adage that a good texture is all you need, the amount of polygons is more of a luxuary, that is a true statement that casts more of a gluttonous bias upon the expense of textural detail when working with Vertex Colors.
 
-But vertex colors are a bigger saving in the long run, because you don't need to keep high resolution textures around, you basically settle on some vertex density that you are happy with and vertex project it, adding a color to each vertex only needs to be an additional 3 bytes for r,g,b.
+But vertex colors are a bigger saving in the long run, because you don't need to keep high resolution textures around, you basically settle on some vertex density that you are happy with and vertex project it, adding a color to each vertex only needs to be an additional 3 bytes for r,g,b which is already less than UV Mappings at 8 bytes for 2 floats.
 
 You could keep it simple like in the car game above, artistic use of vertex colors on low poly models, which is a great benefit over textures, I personally really like the art style to it and it can be done realtively cheaply, particularly if you only had one color per part rendered, that could mean no color buffer per vertex just update the shader [glUniform3f()](https://registry.khronos.org/OpenGL-Refpages/es2.0/) with batches of parts ordered by color.
 
