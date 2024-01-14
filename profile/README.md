@@ -19,7 +19,7 @@ In the image below the token coins and figurines posed as prizes in the coin pus
 ## Reading and Writing PLY Files
 PLY Files are pretty easy to write a custom reader for, in ASCII or BINARY format, so I encourage you to hack together something to convert these buffers into buffers on the GPU. Most software such as [MeshLab](https://www.meshlab.net/) or [Blender](https://www.blender.org/) can export to PLY so really your main concern is reading usually.
 
-The [PLY Format](https://paulbourke.net/dataformats/ply/) already closely represents what a GPU requires; typically a vertex buffer and index buffer; and the PLY formatg specifically supports Vertex Colors.
+The [PLY Format](https://paulbourke.net/dataformats/ply/) already closely represents what a GPU requires; typically a vertex buffer and index buffer; and the PLY format specifically supports Vertex Colors.
 
 * Typically a **vertex buffer** is an interleaved array of data [ position, vertex normal, color ] or [ x, y, z, nx, ny, nz, r, g, b ] but we can provide this via OpenGL using [glVertexAttribPointer](https://registry.khronos.org/OpenGL-Refpages/es2.0/) using a stride and offset on a single vertex buffer or just use multiple seperate vertex buffers.
 * **To quickly load model data**, the PLY format already supplies the data in Binary format as interleaved rows making it a simple memory copy and access with the right stride and offset in OpenGL, but I do reccomend parsing out each vertex array, position, normal, color, into their own respective arrays if you intend to be doing anything with them.
