@@ -6,7 +6,7 @@ Choosing vertex colours is either a technical choice or an artistic choice, for 
 From an artistic perspective it's like picking your brush and paint type, in 3D rendering these days people tend to pile onto the latest and greatest tech, usually involving some form of deferred shading, lots of lights, and a lot of impressive pixel shaders. Using Vertex Colours helped me to discover my own artistic preferences with it comes to 3D rendering.
 
 ## Three main uses of Vertex Colors
-* Subdivide mesh and then project a pre-existing UV Texture as Vertex Colors
+* Subdivide mesh and then project a pre-existing UV Texture as Vertex Colors.
 * Split mesh into seperate parts that represent it's primary colors.
 * Blending between two colors on a face can be used to advantage, in the image below the cube pillars all use the automatic color interpolation between vertices to it's advantage to create an intended colour blend, pink to purple.
 
