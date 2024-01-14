@@ -18,7 +18,7 @@ It tends to look great after a particular distance, and gets worse than a textur
 
 But vertex colors are a bigger saving in the long run, because you don't need to keep high resolution textures around, you basically settle on some vertex density that you are happy with and vertex project it, adding a color to each vertex only needs to be an additional 3 bytes for r,g,b.
 
-or you could keep is simple like in the car game above, artistic use of vertex colors on low poly models, which is also a great benefit to textures, I personally really like the art style to it and it can be done realtively cheaply, particularly if you only had one color per part rendered, that could mean no color buffer at all just update the shader [glUniform3f()](https://registry.khronos.org/OpenGL-Refpages/es2.0/) with batches of parts ordered by color.
+You could keep it simple like in the car game above, artistic use of vertex colors on low poly models, which is also a great benefit to textures, I personally really like the art style to it and it can be done realtively cheaply, particularly if you only had one color per part rendered, that could mean no color buffer at all just update the shader [glUniform3f()](https://registry.khronos.org/OpenGL-Refpages/es2.0/) with batches of parts ordered by color.
 
 ![TuxPusher game screenshot displaying Texture to Vertex Color projection objects](https://dashboard.snapcraft.io/site_media/appmedia/2024/01/Screenshot_2024-01-11_05-37-55.png)
 
