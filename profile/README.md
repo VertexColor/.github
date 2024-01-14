@@ -16,6 +16,8 @@ In the image below the token coins and figurines posed as prizes in the coin pus
 
 It tends to look great after a particular distance, and gets worse than a texture close up, and this form of Vertex Color use is expensive on triangle useage ofc, there is the adage that a good texture is all you need, the amount of polygons is more of a luxuary, that is a true statement and one that makes a gluttonous amount of textural detail so expensive when working with Vertex Colors.
 
+But vertex colors are a bigger saving in the long run, because you don't need to keep high resolution textures around, you basically settle on some vertex density that you are happy with and vertex project it, adding a color to each vertex only needs to be an additional 3 bytes for r,g,b.
+
 ![TuxPusher game screenshot displaying Texture to Vertex Color projection objects](https://dashboard.snapcraft.io/site_media/appmedia/2024/01/Screenshot_2024-01-11_05-37-55.png)
 
 ## Reading and Writing PLY Files
