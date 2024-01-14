@@ -36,3 +36,6 @@ The [PLY Format](https://paulbourke.net/dataformats/ply/) already closely repres
 
 ## Compiling PLY files into C as memory buffers
 ...
+
+## Defining the VCO format, Vertex Color Object.
+...
