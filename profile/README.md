@@ -1,6 +1,10 @@
 # The Vertex Color Organisation
 Using Vertex Colors can be a fast and painless way to starting with a graphics API like OpenGL.
 
+Choosing vertex colours is either a technical choice or an artistic choice, for programmers not having to deal with images and image compression is a good thing, with PLY files you can use [ZLIB](https://www.zlib.net/) or [ZSTD](https://github.com/facebook/zstd) to compress them if desired.
+
+From an artistis perspective it's like picking your brush and paint type, in 3D rendering these days people tend to pile onto the latest and greatest tech, usually involving some form of Deferred shading, lots of lights, and a lot of impressive pixel shaders. I like vertex colours for a number of artistic reasons, but mostly I just don't like games that try to emulate reality - I don't like darkness or shadows in games or having to use a torch or flashlight.
+
 ## Three main uses of Vertex Colors
 * Subdivide mesh and then project a pre-existing UV Texture as Vertex Colors
 * Split mesh into seperate parts that represent it's primary colors.
