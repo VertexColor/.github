@@ -53,7 +53,7 @@ varying vec3 vertCol;
 varying float vertAmb;
 varying float vertSat;
 varying float vertOpa;
-varying vec3 vlightPos;
+varying vec3 vLightPos;
 void main()
 {
   vec4 vertPos4 = modelview * position;
@@ -63,7 +63,7 @@ void main()
   vertAmb = ambient;
   vertSat = saturate;
   vertOpa = opacity;
-  vlightPos = lightpos;
+  vLightPos = lightpos;
   gl_Position = projection * vertPos4;
 }
 ```
@@ -77,10 +77,10 @@ varying vec3 vertCol;
 varying float vertAmb;
 varying float vertSat;
 varying float vertOpa;
-varying vec3 vlightPos;
+varying vec3 vLightPos;
 void main()
 {
-  vec3 lightDir = normalize(vlightPos - vertPos);
+  vec3 lightDir = normalize(vLightPos - vertPos);
   float lambertian = min(max(dot(lightDir, normalize(vertNorm)), 0.0), vertSat);
   gl_FragColor = vec4((vertCol*vertAmb) + (vertCol*lambertian), vertOpa);
 }
