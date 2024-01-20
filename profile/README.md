@@ -179,7 +179,7 @@ void main()
 ## Using the OpenGL shaders
 I reccomend using [GLFW](https://www.glfw.org/) or [SDL](https://www.libsdl.org/) as a portable method of instantiating a window to render to and obtaining user inputs. With these you can use the [esAux6.h](https://gist.github.com/mrbid/8563c765116f2dce3d4461adea15fdd1) header that I created. It will also require [vec.h](https://gist.github.com/mrbid/77a92019e1ab8b86109bf103166bd04e) and [mat.h](https://gist.github.com/mrbid/cbc69ec9d99b0fda44204975fcbeae7c).
 
-You can use [ptf2.c](https://gist.github.com/mrbid/35b1d359bddd9304c1961c1bf0fcb882) to convert ASCII PLY files to C Header Files.
+You can use [ptf2.c](https://gist.github.com/mrbid/35b1d359bddd9304c1961c1bf0fcb882) to convert ASCII PLY files into C Header Files that contain the individual buffers required for rendering in OpenGL.
 
 //
 
