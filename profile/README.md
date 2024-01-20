@@ -102,11 +102,11 @@ attribute vec3 color;
 varying vec4 fragcolor;
 void main()
 {
-        "vec4 vertPos4 = modelview * position;
-        "vec3 vertNorm = normalize(vec3(modelview * vec4(normal, 0.0)));
-        "vec3 lightDir = normalize(lightpos - (vertPos4.xyz / vertPos4.w));
-        "fragcolor = vec4((color*ambient) + (color * min(max(dot(lightDir, vertNorm), 0.0), saturation)), opacity);
-        "gl_Position = projection * vertPos4;
+  vec4 vertPos4 = modelview * position;
+  vec3 vertNorm = normalize(vec3(modelview * vec4(normal, 0.0)));
+  vec3 lightDir = normalize(lightpos - (vertPos4.xyz / vertPos4.w));
+  fragcolor = vec4((color*ambient) + (color * min(max(dot(lightDir, vertNorm), 0.0), saturation)), opacity);
+  gl_Position = projection * vertPos4;
 }
 ```
 **fragment shader**
