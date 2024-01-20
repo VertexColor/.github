@@ -35,7 +35,7 @@ The [PLY Format](https://paulbourke.net/dataformats/ply/) already closely repres
 [The RPLY Project](https://w3.impa.br/~diego/software/rply/) has simple examples, is fast and light-weight to implement into projects.
 
 ## OpenGL Vertex & Fragment Shaders for Vertex Colors [per-pixel lighting]
-vertex shader:
+**vertex shader**
 ```
 #version 100
 uniform mat4 modelview;
@@ -67,7 +67,7 @@ void main()
   gl_Position = projection * vertPos4;
 }
 ```
-fragment shader:
+**fragment shader**
 ```
 #version 100
 precision highp float;
@@ -83,6 +83,40 @@ void main()
   vec3 lightDir = normalize(vlightPos - vertPos);
   float lambertian = min(max(dot(lightDir, normalize(vertNorm)), 0.0), vertSat);
   gl_FragColor = vec4((vertCol*vertAmb) + (vertCol*lambertian), vertOpa);
+}
+```
+
+## OpenGL Vertex & Fragment Shaders for Vertex Colors [per-vertex lighting]
+vertex shader:
+```
+#version 100
+uniform mat4 modelview;
+uniform mat4 projection;
+uniform float ambient;
+uniform float saturation;
+uniform float opacity;
+uniform vec3 lightpos;
+attribute vec4 position;
+attribute vec3 normal;
+attribute vec3 color;
+varying vec4 fragcolor;
+void main()
+{
+        "vec4 vertPos4 = modelview * position;
+        "vec3 vertNorm = normalize(vec3(modelview * vec4(normal, 0.0)));
+        "vec3 lightDir = normalize(lightpos - (vertPos4.xyz / vertPos4.w));
+        "fragcolor = vec4((color*ambient) + (color * min(max(dot(lightDir, vertNorm), 0.0), saturation)), opacity);
+        "gl_Position = projection * vertPos4;
+}
+```
+fragment shader:
+```
+"#version 100
+precision highp float;
+varying vec4 fragcolor;
+void main()
+{
+  gl_FragColor = fragcolor;
 }
 ```
 
