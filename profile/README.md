@@ -87,7 +87,7 @@ void main()
 ```
 
 ## OpenGL Vertex & Fragment Shaders for Vertex Colors [per-vertex lighting]
-vertex shader:
+**vertex shader**
 ```
 #version 100
 uniform mat4 modelview;
@@ -109,7 +109,7 @@ void main()
         "gl_Position = projection * vertPos4;
 }
 ```
-fragment shader:
+**fragment shader**
 ```
 "#version 100
 precision highp float;
