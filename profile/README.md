@@ -111,7 +111,7 @@ void main()
 ```
 **fragment shader**
 ```
-"#version 100
+#version 100
 precision highp float;
 varying vec4 fragcolor;
 void main()
