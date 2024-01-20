@@ -34,6 +34,58 @@ The [PLY Format](https://paulbourke.net/dataformats/ply/) already closely repres
 ## Loading PLY files in C
 [The RPLY Project](https://w3.impa.br/~diego/software/rply/) has simple examples, is fast and light-weight to implement into projects.
 
+## OpenGL Vertex & Fragment Shaders for Vertex Colors [per-pixel lighting]
+vertex shader:
+```
+#version 100
+uniform mat4 modelview;
+uniform mat4 projection;
+uniform float ambient;
+uniform float saturate;
+uniform float opacity;
+uniform vec3 lightpos;
+attribute vec4 position;
+attribute vec3 normal;
+attribute vec3 color;
+varying vec3 vertPos;
+varying vec3 vertNorm;
+varying vec3 vertCol;
+varying float vertAmb;
+varying float vertSat;
+varying float vertOpa;
+varying vec3 vlightPos;
+void main()
+{
+  vec4 vertPos4 = modelview * position;
+  vertPos = vertPos4.xyz / vertPos4.w;
+  vertNorm = vec3(modelview * vec4(normal, 0.0));
+  vertCol = color;
+  vertAmb = ambient;
+  vertSat = saturate;
+  vertOpa = opacity;
+  vlightPos = lightpos;
+  gl_Position = projection * vertPos4;
+}
+```
+fragment shader:
+```
+#version 100
+precision highp float;
+varying vec3 vertPos;
+varying vec3 vertNorm;
+varying vec3 vertCol;
+varying float vertAmb;
+varying float vertSat;
+varying float vertOpa;
+varying vec3 vlightPos;
+void main()
+{
+  vec3 lightDir = normalize(vlightPos - vertPos);
+  float lambertian = min(max(dot(lightDir, normalize(vertNorm)), 0.0), vertSat);
+  gl_FragColor = vec4((vertCol*vertAmb) + (vertCol*lambertian), vertOpa);
+}
+```
+
 ## Compiling PLY files into C as memory buffers
 ...
 
