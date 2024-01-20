@@ -73,14 +73,14 @@ int main(void)
     if (!ply_read_header(ply)) return 1;
     
     nvertices = ply_set_read_cb(ply, "vertex", "x", vertex_cb, NULL, 0);
-    ply_set_read_cb(ply, "vertex", "y", vertex_cb, NULL, 0);
-    ply_set_read_cb(ply, "vertex", "z", vertex_cb, NULL, 0);
-    ply_set_read_cb(ply, "vertex", "nx", vertex_cb, NULL, 0);
-    ply_set_read_cb(ply, "vertex", "ny", vertex_cb, NULL, 0);
-    ply_set_read_cb(ply, "vertex", "nz", vertex_cb, NULL, 0);
-    ply_set_read_cb(ply, "vertex", "red", vertex_cb, NULL, 0);
+    ply_set_read_cb(ply, "vertex", "y",     vertex_cb, NULL, 0);
+    ply_set_read_cb(ply, "vertex", "z",     vertex_cb, NULL, 0);
+    ply_set_read_cb(ply, "vertex", "nx",    vertex_cb, NULL, 0);
+    ply_set_read_cb(ply, "vertex", "ny",    vertex_cb, NULL, 0);
+    ply_set_read_cb(ply, "vertex", "nz",    vertex_cb, NULL, 0);
+    ply_set_read_cb(ply, "vertex", "red",   vertex_cb, NULL, 0);
     ply_set_read_cb(ply, "vertex", "green", vertex_cb, NULL, 0);
-    ply_set_read_cb(ply, "vertex", "blue", vertex_cb, NULL, 1);
+    ply_set_read_cb(ply, "vertex", "blue",  vertex_cb, NULL, 1);
     ntriangles = ply_set_read_cb(ply, "face", "vertex_indices", face_cb, NULL, 0);
 
     printf("%ld\n%ld\n", nvertices, ntriangles);
