@@ -183,6 +183,6 @@ You can use [ptf2.c](https://gist.github.com/mrbid/35b1d359bddd9304c1961c1bf0fcb
 
 //
 
-## Compiling PLY files into C as memory buffers
-...
+## More options for compiling PLY files into C Header Files as memory buffers
+We are currently working on a more efficient program to mass convert PLY BINARY files to C Header Files.
 
