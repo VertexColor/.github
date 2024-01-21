@@ -219,7 +219,7 @@ You can use [ptf2.c](https://gist.github.com/mrbid/35b1d359bddd9304c1961c1bf0fcb
 **An example program using GLFW which will load a `test.ply` file as strided data and render it**
 ```
 /*
-    James William Fletcher ( github.com/mrbid )
+    James William Fletcher (github.com/mrbid)
         January 2024
 
     https://github.com/VertexColor
@@ -227,12 +227,9 @@ You can use [ptf2.c](https://gist.github.com/mrbid/35b1d359bddd9304c1961c1bf0fcb
     cc main.c rply.c glad_gl.c -I inc -Ofast -lglfw -lm -o plv
 */
 
-#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <time.h>
-
 #define uint GLuint
 #define sint GLint
 #include "gl.h"
@@ -252,7 +249,7 @@ mat projection, model;
 void timestamp(char* ts){const time_t tt = time(0); strftime(ts, 16, "%H:%M:%S", localtime(&tt));}
 void updateModel(){glUniformMatrix4fv(modelview_id, 1, GL_FALSE, (float*)&model.m[0][0]);}
 
-// load model from file to gpu memory with a permenant 12 MB staging buffer
+// load model from file to gpu memory with a permanent 12 MB staging buffer
 #define MAX_SIZE 2097152
 GLfloat vertex_buffer[MAX_SIZE];
 GLushort index_buffer[MAX_SIZE];
@@ -339,32 +336,7 @@ void loadModel(const char* fp)
     esModelArray_index++;
 }
 
-// update & render
-void main_loop()
-{
-    // delta time
-    glfwPollEvents();
-    t = fTime();
-
-    // clear buffer
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-    // render model
-    mIdent(&model);
-    mRotX(&model, 90.f * DEG2RAD);
-    mRotY(&model, 90.f * DEG2RAD);
-    mRotZ(&model, t * 1.2f);
-    mSetPos3(&model, 0.f, 0.f, -2.f);
-    updateModel();
-    esBindRender(0);
-
-    // display render
-    glfwSwapBuffers(wnd);
-}
-
-//*************************************
 // process entry point
-//*************************************
 int main(int argc, char** argv)
 {
     // create window with custom MSAA level
@@ -405,7 +377,26 @@ int main(int argc, char** argv)
     glUniform1f(saturate_id, 1.f);
 
     // render loop
-    while(!glfwWindowShouldClose(wnd)){main_loop();}
+    while(!glfwWindowShouldClose(wnd))
+    {
+        // Poll GLFW events so that we know when the window is closed
+        glfwPollEvents(); 
+
+        // clear buffer
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+        // render model
+        mIdent(&model);
+        mRotX(&model, 90.f * DEG2RAD);
+        mRotY(&model, 90.f * DEG2RAD);
+        mRotZ(&model, fTime() * 1.2f);
+        mSetPos3(&model, 0.f, 0.f, -2.f);
+        updateModel();
+        esBindRender(0);
+
+        // display render
+        glfwSwapBuffers(wnd);
+    }
 
     // end
     glfwDestroyWindow(wnd);
@@ -413,6 +404,7 @@ int main(int argc, char** argv)
     exit(EXIT_SUCCESS);
     return 0;
 }
+
 ```
 
 ## More options for compiling PLY files into C Header Files as memory buffers
