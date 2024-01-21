@@ -25,7 +25,7 @@ You could keep it simple like in the car game above - artistic use of vertex col
 ## Projecting Textures to Vertex Colors
 The easiest method to do this is to use [MeshLab](https://www.meshlab.net/) by going to the Menu `Filters > Texture > Transfer: Texture to Vertex Color` you can also Subdivide the mesh first to get a higher resolution projection to Vertex Colors.
 
-## Reading and Writing PLY Files
+## Reading PLY Files
 PLY Files are pretty easy to write a custom reader for, in ASCII or BINARY format, so I encourage you to hack together something to convert these buffers into buffers on the GPU. Most software such as [MeshLab](https://www.meshlab.net/) or [Blender](https://www.blender.org/) can export to PLY so really your main concern is reading them into your program somehow.
 
 The [PLY Format](https://paulbourke.net/dataformats/ply/) already closely represents what a GPU requires; typically a vertex buffer and index buffer; and the PLY format specifically supports Vertex Colors.
