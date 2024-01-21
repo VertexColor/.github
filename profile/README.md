@@ -351,7 +351,7 @@ int main(int argc, char** argv)
     glfwSwapInterval(1); // 0 for immediate updates, 1 for updates synchronized with the vertical retrace, -1 for adaptive vsync
 
     // load our test model
-    loadModel("0.ply");
+    loadModel("test.ply");
 
     // configure render options
     glEnable(GL_CULL_FACE);
