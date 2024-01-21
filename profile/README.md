@@ -180,7 +180,7 @@ void main()
 ```
 
 ## Specular Mapping
-The best method to implement specular mapping would be to pass a specular map to the Ambient parameter, this would allow you to have brighter highlights on metalic parts of a model by boosting it's ambient light value for those vertices.
+The best method to implement specular mapping would be to pass a specular map to the Ambient parameter, this would allow you to have brighter highlights on metallic parts of a model by boosting it's ambient light value for those vertices.
 
 ## Using the OpenGL shaders
 I recommend using [GLFW](https://www.glfw.org/) or [SDL](https://www.libsdl.org/) as a portable method of instantiating a window to render to and obtaining user inputs. With these you can use the [esAux6.h](https://gist.github.com/mrbid/8563c765116f2dce3d4461adea15fdd1) header that I created. It will also require [vec.h](https://gist.github.com/mrbid/77a92019e1ab8b86109bf103166bd04e) and [mat.h](https://gist.github.com/mrbid/cbc69ec9d99b0fda44204975fcbeae7c).
