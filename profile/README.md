@@ -181,7 +181,40 @@ I reccomend using [GLFW](https://www.glfw.org/) or [SDL](https://www.libsdl.org/
 
 You can use [ptf2.c](https://gist.github.com/mrbid/35b1d359bddd9304c1961c1bf0fcb882) to convert ASCII PLY files into C Header Files that contain the individual buffers required for rendering in OpenGL _(or use [RPLY](https://github.com/VertexColor#loading-ply-files-in-c) to load them from file)_.
 
-//
+Some notes from the esAux6.h source file:
+```
+/*
+    Lambertian fragment shaders make a difference, but only if you normalise the
+    vertNorm in the fragment shader. Most of the time you won't notice the difference.
+
+    This focuses on using ML generated models from LUMA GENIE or MESHY.AI
+    converted to vertex colors and shaded via shadeLambert().
+    
+    No Textures, No Phong, One view-space light with position, ambient and saturation control.
+
+    Default: ambient = 0.648, saturate = 0.26 or 1.0
+
+    The model header files have their own register function with the new ptf2.c
+    the idea is simply that the order you call the "<model-name>_register()" functions in
+    is the index of the model loaded, so the first 0, then, 1 and so on.
+    Then you use this index to call esBindModel(id) and esRenderModel()
+        or just esBindRender(id).
+
+    Requires:
+        - vec.h: https://gist.github.com/mrbid/77a92019e1ab8b86109bf103166bd04e
+        - mat.h: https://gist.github.com/mrbid/cbc69ec9d99b0fda44204975fcbeae7c
+        ¿ptf2.c: https://gist.github.com/mrbid/35b1d359bddd9304c1961c1bf0fcb882
+    
+*/
+#ifndef AUX_H
+#define AUX_H
+
+//#define VERTEX_SHADE // uncomment for vertex shaded, default is pixel shaded
+//#define MAX_MODELS 32
+//#define GL_DEBUG // allows you to use esDebug(1); to enable OpenGL errors to the console.
+                    // https://gen.glad.sh/ and https://glad.dav1d.de/ might help
+//#define MODEL_DATA_STRIDED // uncomment to load vertex data into GPU memory from one strided vertex buffer
+```
 
 ## More options for compiling PLY files into C Header Files as memory buffers
 We are currently working on a more efficient program to mass convert PLY BINARY files to C Header Files.
