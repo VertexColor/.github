@@ -187,7 +187,7 @@ There are then two main parameters per object rendered:
 * Ambient - This defines how much environmental light the model naturally reflects.
 * Saturate - This clamps the max lightness value of the model being rendered, this can prevent a model having overly bright spots.
 
-Opacity can also be set per model but requires GL_BLEND to be enabled with soem blending function such as `glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);`.
+Opacity can also be set per model but requires [GL_BLEND](https://registry.khronos.org/OpenGL-Refpages/es2.0/) to be enabled with some blending function such as `glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);`.
 
 **Some notes from the esAux6.h source file**
 ```
