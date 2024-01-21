@@ -23,7 +23,7 @@ You could keep it simple like in the car game above - artistic use of vertex col
 ![TuxPusher game screenshot displaying Texture to Vertex Color projection objects](https://dashboard.snapcraft.io/site_media/appmedia/2024/01/Screenshot_2024-01-11_05-37-55.png)
 
 ## Projecting Textures to Vertex Colors
-The easiest method to do this is to use [MeshLab](https://www.meshlab.net/) although these days I use the Cycles rendering engine in [Blender](https://www.blender.org/) 
+The easiest method to do this is to use [MeshLab](https://www.meshlab.net/) by going to the Menu `Filters > Texture > Transfer: Texture to Vertex Color`.
 
 ## Reading and Writing PLY Files
 PLY Files are pretty easy to write a custom reader for, in ASCII or BINARY format, so I encourage you to hack together something to convert these buffers into buffers on the GPU. Most software such as [MeshLab](https://www.meshlab.net/) or [Blender](https://www.blender.org/) can export to PLY so really your main concern is reading them into your program somehow.
