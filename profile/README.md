@@ -235,7 +235,6 @@ Then you use this index to call esBindModel(id) and esRenderModel()
 const char appTitle[]="PLY Viewer";
 uint winw=1024, winh=768;
 GLFWwindow* wnd;
-float t=0.f;
 mat projection, model;
 void timestamp(char* ts){const time_t tt = time(0); strftime(ts, 16, "%H:%M:%S", localtime(&tt));}
 void updateModel(){glUniformMatrix4fv(modelview_id, 1, GL_FALSE, (float*)&model.m[0][0]);}
