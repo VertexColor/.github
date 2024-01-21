@@ -181,6 +181,12 @@ I reccomend using [GLFW](https://www.glfw.org/) or [SDL](https://www.libsdl.org/
 
 You can use [ptf2.c](https://gist.github.com/mrbid/35b1d359bddd9304c1961c1bf0fcb882) to convert ASCII PLY files into C Header Files that contain the individual buffers required for rendering in OpenGL _(or use [RPLY](https://github.com/VertexColor#loading-ply-files-in-c) to load them from file)_.
 
+The shader uses two main systems for lighting models, first it has a view-space light that you can set the offset position of - if the position is unset (0,0,0) then the light will always be at the postion of the camera, some times you might want to increase the height of the light from the player or extend it out a little. It's preference to use on view-space light than many world-space lights.
+
+There are then two parameters per object rendered:
+* ambient - This defines how much environmental light the model naturally reflects.
+* saturate - This clamps the max lightness value of the model being rendered, this can prevent a model having overly bright spots.
+
 **Some notes from the esAux6.h source file**
 ```
 No Textures, No Phong, One view-space light with position, ambient and saturation control.
