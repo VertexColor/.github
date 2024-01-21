@@ -18,7 +18,7 @@ Vertex Colors tend to look great after a particular distance, and get worse than
 
 But vertex colors are a bigger saving in the long run, because you don't need to keep high resolution textures around, you basically settle on some vertex density that you are happy with and vertex project it, adding a color to each vertex only needs to be an additional 3 bytes for r,g,b which is already less than UV Mappings at 8 bytes for 2 floats.
 
-You could keep it simple like in the car game above - artistic use of vertex colors on low poly models. I personally really like the art style to it and it can be done relatively cheaply particularly if you only render one color per part as that could mean no color buffer per vertex just update the shader [glUniform3f()](https://registry.khronos.org/OpenGL-Refpages/es2.0/) with batches of parts ordered by color.
+You could keep it simple like in the car game above - artistic use of vertex colors on low poly models. I personally really like the art style to it and it can be done relatively cheaply particularly if you only render one color per part as that could mean no color buffer per vertex just update the shader [glUniform3f()](https://registry.khronos.org/OpenGL-Refpages/es2.0/xhtml/glUniform.xml) with batches of parts ordered by color.
 
 ![TuxPusher game screenshot displaying Texture to Vertex Color projection objects](https://dashboard.snapcraft.io/site_media/appmedia/2024/01/Screenshot_2024-01-11_05-37-55.png)
 
@@ -30,9 +30,9 @@ PLY Files are pretty easy to write a custom reader for, in ASCII or BINARY forma
 
 The [PLY Format](https://paulbourke.net/dataformats/ply/) already closely represents what a GPU requires; typically a vertex buffer and index buffer; and the PLY format specifically supports Vertex Colors.
 
-* Typically a **vertex buffer** is an interleaved array of data `[ position, vertex normal, color ]` or `[ x, y, z, nx, ny, nz, r, g, b ]` but we can provide this via OpenGL using [glVertexAttribPointer](https://registry.khronos.org/OpenGL-Refpages/es2.0/) using a stride and offset on a single vertex buffer or just use multiple separate vertex buffers.
+* Typically a **vertex buffer** is an interleaved array of data `[ position, vertex normal, color ]` or `[ x, y, z, nx, ny, nz, r, g, b ]` but we can provide this via OpenGL using [glVertexAttribPointer](https://registry.khronos.org/OpenGL-Refpages/es2.0/xhtml/glVertexAttribPointer.xml) using a stride and offset on a single vertex buffer or just use multiple separate vertex buffers.
 * **To quickly load model data**, the PLY format already supplies the data in Binary format as interleaved rows making it a simple memory copy and access with the right stride and offset in OpenGL, but I do recommend parsing out each vertex array, position, normal, color, into their own respective arrays if you intend to be doing anything with them.
-* **The index buffer** in PLY files is preceded by the amount of vertex used to define a face, usually I work in triangles so that's always 3 for me, but I still need to parse a new index buffer without the preceding face counts for each proceeding three vertices that make a triangle face, as OpenGL is generally used with the  [GL_TRIANGLES](https://registry.khronos.org/OpenGL-Refpages/es2.0/) draw mode that expects the supplied index buffer to be of triangle faces only.
+* **The index buffer** in PLY files is preceded by the amount of vertex used to define a face, usually I work in triangles so that's always 3 for me, but I still need to parse a new index buffer without the preceding face counts for each proceeding three vertices that make a triangle face, as OpenGL is generally used with the  [GL_TRIANGLES](https://registry.khronos.org/OpenGL-Refpages/es2.0/xhtml/glDrawElements.xml) draw mode that expects the supplied index buffer to be of triangle faces only.
 
 ## Loading PLY files in C
 [The RPLY Project](https://w3.impa.br/~diego/software/rply/) has simple examples, is fast and light-weight to implement into projects.
@@ -193,7 +193,7 @@ There are then two main parameters per object rendered:
 * Ambient - This defines how much environmental light the model naturally reflects.
 * Saturate - This clamps the max lightness value of the model being rendered, this can prevent a model having overly bright spots.
 
-Opacity can also be set per model but requires [GL_BLEND](https://registry.khronos.org/OpenGL-Refpages/es2.0/) to be enabled with some blending function such as `glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);`.
+Opacity can also be set per model but requires [GL_BLEND](https://registry.khronos.org/OpenGL-Refpages/es2.0/xhtml/glBlendFunc.xml) to be enabled with some blending function such as `glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);`.
 
 **Some notes from the esAux6.h source file**
 ```
