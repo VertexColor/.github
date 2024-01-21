@@ -207,7 +207,7 @@ Then you use this index to call esBindModel(id) and esRenderModel()
 //#define MODEL_DATA_STRIDED // uncomment to load vertex data into GPU memory from one strided vertex buffer
 ```
 
-**An example program using GLFW which will load a `test.ply` file as strided data and render it**
+**An example program using GLFW that loads a `test.ply` file as strided data and then renders it**
 ```
 /*
     James William Fletcher (github.com/mrbid)
