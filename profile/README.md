@@ -228,7 +228,7 @@ Then you use this index to call esBindModel(id) and esRenderModel()
 #include "glfw3.h"
 #define fTime() (float)glfwGetTime()
 #define MAX_MODELS 1 // hard limit, be aware and increase if needed
-#define MODEL_DATA_STRIDED // load vertex data as strided
+#define MODEL_DATA_STRIDED // load vertex data as strided onto the GPU
 #include "esAux6.h"
 #include "rply.h"
 
