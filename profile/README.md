@@ -22,9 +22,6 @@ You could keep it simple like in the car game above - artistic use of vertex col
 
 ![TuxPusher game screenshot displaying Texture to Vertex Color projection objects](https://dashboard.snapcraft.io/site_media/appmedia/2024/01/Screenshot_2024-01-11_05-37-55.png)
 
-## Specular Mapping
-The best method to implement specular mapping would be to pass a specular map to the Ambient paramerter, this would allow you to have brighter highlights on metalic parts of a model by boosting it's ambient light value for those vertices.
-
 ## Reading and Writing PLY Files
 PLY Files are pretty easy to write a custom reader for, in ASCII or BINARY format, so I encourage you to hack together something to convert these buffers into buffers on the GPU. Most software such as [MeshLab](https://www.meshlab.net/) or [Blender](https://www.blender.org/) can export to PLY so really your main concern is reading them into your program somehow.
 
@@ -178,6 +175,9 @@ void main()
   gl_FragColor = fragcolor;
 }
 ```
+
+## Specular Mapping
+The best method to implement specular mapping would be to pass a specular map to the Ambient paramerter, this would allow you to have brighter highlights on metalic parts of a model by boosting it's ambient light value for those vertices.
 
 ## Using the OpenGL shaders
 I reccomend using [GLFW](https://www.glfw.org/) or [SDL](https://www.libsdl.org/) as a portable method of instantiating a window to render to and obtaining user inputs. With these you can use the [esAux6.h](https://gist.github.com/mrbid/8563c765116f2dce3d4461adea15fdd1) header that I created. It will also require [vec.h](https://gist.github.com/mrbid/77a92019e1ab8b86109bf103166bd04e) and [mat.h](https://gist.github.com/mrbid/cbc69ec9d99b0fda44204975fcbeae7c).
