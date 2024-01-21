@@ -223,7 +223,6 @@ Then you use this index to call esBindModel(id) and esRenderModel()
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 #define uint GLuint
 #define sint GLint
 #include "gl.h"
@@ -239,7 +238,6 @@ const char appTitle[]="PLY Viewer";
 uint winw=1024, winh=768;
 GLFWwindow* wnd;
 mat projection, model;
-void timestamp(char* ts){const time_t tt = time(0); strftime(ts, 16, "%H:%M:%S", localtime(&tt));}
 void updateModel(){glUniformMatrix4fv(modelview_id, 1, GL_FALSE, (float*)&model.m[0][0]);}
 
 // load model from file to gpu memory with a permanent 12 MB staging buffer
