@@ -187,7 +187,7 @@ I recommend using [GLFW](https://www.glfw.org/) or [SDL](https://www.libsdl.org/
 
 You can use [ptf2.c](https://gist.github.com/mrbid/35b1d359bddd9304c1961c1bf0fcb882) to convert ASCII PLY files into C Header Files that contain the individual buffers required for rendering in OpenGL _(or use [RPLY](https://github.com/VertexColor#loading-ply-files-in-c) to load them from file)_.
 
-The shader uses two main systems for lighting models, first it has a view-space light that you can set the offset position of - if the position is unset (0,0,0) then the light will always be at the postiion of the camera, some times you might want to increase the height of the light from the player or extend it out a little. It's just preference to use one view-space light than many world-space lights.
+The shader uses two main systems for lighting models, first it has a view-space light that you can set the offset position of - if the position is unset (0,0,0) then the light will always be at the position of the camera, some times you might want to increase the height of the light from the player or extend it out a little. It's just preference to use one view-space light than many world-space lights.
 
 There are then two main lighting parameters per object rendered:
 * Ambient - This defines how much environmental light the model naturally emits.
