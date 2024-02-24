@@ -402,5 +402,5 @@ int main(int argc, char** argv)
 **Here is the full source code repository:** https://github.com/VertexColor/PLY-View
 
 ## More options for compiling PLY files into C Header Files as memory buffers
-We are currently working on a more efficient program to mass convert PLY BINARY files to C Header Files.
+We are currently working on a more efficient program to mass convert PLY BINARY files to C Header Files, the development of this program is maintained here: https://github.com/mrbid/PTO
 
