@@ -10,7 +10,7 @@ From an artistic perspective it's like picking your brush and paint type, in 3D 
 * Split mesh into separate parts that represent its primary colors.
 * Blending between two colors on a face can be used to advantage, in the image below the cube pillars all use the automatic color interpolation between vertices to it's advantage to create an intended colour blend, pink to purple.
 
-![Image of a Pink BMW E34 in a Cyberpunk setting](https://camo.githubusercontent.com/6b0807eced228ca80a35a1427aae346c66eb2c0dce203671df39322b5d152612/68747470733a2f2f64617368626f6172642e736e617063726166742e696f2f736974655f6d656469612f6170706d656469612f323032332f31312f53637265656e73686f745f323032332d31312d30315f32312d35372d32372e706e67)
+[![Image of a Pink BMW E34 in a Cyberpunk setting](https://camo.githubusercontent.com/6b0807eced228ca80a35a1427aae346c66eb2c0dce203671df39322b5d152612/68747470733a2f2f64617368626f6172642e736e617063726166742e696f2f736974655f6d656469612f6170706d656469612f323032332f31312f53637265656e73686f745f323032332d31312d30315f32312d35372d32372e706e67)](https://pushergames.itch.io/porydrive)
 
 In the image below the token coins and figurines posed as prizes in the coin pusher are ML/AI generated 3D models by [LUMA GENIE](https://lumalabs.ai/genie) that have had their UV Texture maps projected to Vertex Colors in Blender using the [Cycles rendering engine](https://docs.blender.org/manual/en/latest/render/cycles/introduction.html). Each model is ~50,000 triangles uniformly spaced, once "vertex projected" _(I like to call it for the transformation of the UV Texture to Vertex Colors)_, this 50,000 uniform spacing of triangles around an object becomes their own pixels. You can tell a distinct difference between the "vertex projected" models and the penguin coins due to their textural differences which are more traditionally vertex shaded per part as a single color.
 
@@ -20,7 +20,7 @@ But vertex colors are a bigger saving in the long run, because you don't need to
 
 You could keep it simple like in the car game above - artistic use of vertex colors on low poly models. I personally really like the art style to it and it can be done relatively cheaply particularly if you only render one color per part as that could mean no color buffer per vertex just update the shader [glUniform3f()](https://registry.khronos.org/OpenGL-Refpages/es2.0/xhtml/glUniform.xml) with batches of parts ordered by color.
 
-![TuxPusher game screenshot displaying Texture to Vertex Color projection objects](https://dashboard.snapcraft.io/site_media/appmedia/2024/01/Screenshot_2024-01-11_05-37-55.png)
+[![TuxPusher game screenshot displaying Texture to Vertex Color projection objects](https://dashboard.snapcraft.io/site_media/appmedia/2024/01/Screenshot_2024-01-11_05-37-55.png)](https://pushergames.itch.io/tuxpusher)
 
 ## Projecting Textures to Vertex Colors
 The easiest method to do this is to use [MeshLab](https://www.meshlab.net/) by going to the Menu `Filters > Texture > Transfer: Texture to Vertex Color` you can also Subdivide the mesh first to get a higher resolution projection to Vertex Colors.
