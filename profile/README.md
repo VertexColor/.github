@@ -1,4 +1,4 @@
-# The Vertex Color Organisation
+# The Vertex Color Organisation [(also on Medium)](https://james-william-fletcher.medium.com/vertex-colors-483f9bde0173)
 Using Vertex Colors can be a fast and painless way to starting with a graphics API like OpenGL.
 
 Choosing vertex colours is either a technical choice or an artistic choice, for programmers not having to deal with images and image compression is a good thing, with PLY files you can use [ZLIB](https://www.zlib.net/) or [ZSTD](https://github.com/facebook/zstd) to compress the vertex/index data if desired.
